@@ -122,6 +122,10 @@ nav {
 	font-size: var(--nav-item-font-size);
 }
 
+header {
+	margin-top: 20px;
+}
+
 .section-title {
     margin: 12px 0px;
 	font-family: 'Survey-bold', 'Times New Roman', Times, serif;
