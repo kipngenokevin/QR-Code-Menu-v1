@@ -71,10 +71,11 @@
 	--nav-item-border: 1px solid whitesmoke;
 	--nav-item-padding: 0.5em 0.8em;
 	--nav-item-display: flex;
-	--nav-item-gap: 0.2em;
+	--nav-item-gap: 0.4em;
 	--nav-item-border-radius: 0.3em;
 	--nav-item-background: #2A5136;
 	--nav-item-color: white;
+	--nav-item-font-size: 1.2em;
 }
 
 html {
@@ -118,6 +119,7 @@ nav {
     border-radius: var(--nav-item-border-radius);
     background-color: var(--nav-item-background);
     color: var(--nav-item-color);
+	font-size: var(--nav-item-font-size);
 }
 
 .section-title {
