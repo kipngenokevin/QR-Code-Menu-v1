@@ -1,0 +1,154 @@
+@font-face {
+	font-family: 'Futura-light';
+	src: url('fonts/Futura.woff2') format('woff2'),
+	  url('fonts/Futura.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: 'Futura-bold';
+	src:
+	  url('fonts/Futura-Bold.woff2') format('woff2'),
+	  url('fonts/Futura-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: 'Futura-medium';
+	src:
+	  url('fonts/futura_medium_bt-webfont.woff') format('woff2'),
+	  url('fonts/futura_medium_bt-webfont.woff2') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: 'GlacialIndifference-Regular';
+	src: url('fonts/GlacialIndifference-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+	font-family: 'GlacialIndifference-Bold';
+	src: url('fonts/GlacialIndifference-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+	font-family: 'Garamond';
+	src: url('fonts/GaramondITCbyBT-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+	font-family: 'Knockout';
+	src: url('fonts/Knockout-HTF28-JuniorFeatherwt.otf') format('opentype');
+  }
+  
+  @font-face {
+	font-family: 'Survey-regular';
+	src: url('fonts/SurveyorDisplay-Book-Pro.otf') format('opentype');
+  }
+  @font-face {
+	font-family: 'Survey-bold';
+	src: url('fonts/SurveyorText-Book-Pro.otf') format('opentype');
+  }
+
+:root {
+	--bs-body-font-family: 'GlacialIndifference-Regular', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important; 
+	--bold-font: 'GlacialIndifference-Bold';
+
+	--nav-display: flex;
+	--nav-padding: 0.8em;
+	--nav-overflow-x: scroll;
+	--nav-min-width: 100%;
+	--nav-border-radius: 0.4em;
+	--nav-margin: 0em 0em;
+	--nav-gap: 0.4em;
+
+	--nav-item-border: 1px solid whitesmoke;
+	--nav-item-padding: 0.5em 0.8em;
+	--nav-item-display: flex;
+	--nav-item-gap: 0.2em;
+	--nav-item-border-radius: 0.3em;
+	--nav-item-background: #2A5136;
+	--nav-item-color: white;
+}
+
+html {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+table {
+	min-width: 100%;
+	margin-bottom: 2em;
+}
+
+td:first-child {
+	font-family: 'GlacialIndifference-Bold';
+}
+
+td p {
+	font-family: 'GlacialIndifference-Regular';
+}
+
+nav {
+    display: var(--nav-display);
+    padding: var(--nav-padding);
+    overflow-x: var(--nav-overflow-x);
+    min-width: var(--nav-min-width);
+    border-radius: var(--nav-border-radius);
+    margin: var(--nav-margin);
+	gap: var(--nav-gap);
+}
+
+.nav-item {
+    border: var(--nav-item-border);
+    padding: var(--nav-item-padding);
+    display: var(--nav-item-display);
+    gap: var(--nav-item-gap);
+    border-radius: var(--nav-item-border-radius);
+    background-color: var(--nav-item-background);
+    color: var(--nav-item-color);
+}
+
+.section-title {
+    margin: 12px 0px;
+	font-family: 'Survey-bold', 'Times New Roman', Times, serif;
+	font-size: 2rem;
+}
+
+.green-border {
+    border: 2px solid #2A5136;
+    margin: 1em 0em;
+    padding: 1em;
+}
+
+.coffee-section {
+	background: url('../images/background.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.bold-text {
+	font-family: var(--bold-font);
+}
+
+.food-category::after {
+	content: "Ad Content";
+	background: url('../images/ad.jpeg');
+	background-position: center;
+	background-size: contain;
+	display: block;
+	min-height: 300px;
+	min-width: 100%;
+	border: 1px solid red;
+}
