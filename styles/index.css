@@ -76,10 +76,13 @@
 	--nav-item-background: #2A5136;
 	--nav-item-color: white;
 	--nav-item-font-size: 1.2em;
+
+	--section-title-color: #2A5136;
 }
 
 html {
 	margin: 0;
+	overflow-x: hidden;
 }
 
 body {
@@ -99,6 +102,8 @@ td:first-child {
 
 td p {
 	font-family: 'GlacialIndifference-Regular';
+	font-size: small;
+	width: 100%;
 }
 
 nav {
@@ -128,8 +133,10 @@ header {
 
 .section-title {
     margin: 12px 0px;
-	font-family: 'Survey-bold', 'Times New Roman', Times, serif;
+	font-family: Times, serif;
 	font-size: 2rem;
+	font-weight: 800;
+	color: var(--section-title-color);
 }
 
 .green-border {
@@ -148,13 +155,76 @@ header {
 	font-family: var(--bold-font);
 }
 
-.food-category::after {
-	content: "Ad Content";
-	background: url('../images/ad.jpeg');
-	background-position: center;
-	background-size: contain;
-	display: block;
-	min-height: 300px;
-	min-width: 100%;
-	border: 1px solid red;
+.small-text {
+	font-weight: 100;
+	font-size: xx-small;
+}
+
+.header-margin {
+	padding: 2rem;
+}
+
+/* MENU ANIMATION */
+.artcaffe-slideshow {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .artcaffe-slideshow img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+	top: 0;
+	left: 0;
+	transition: transform ease 1.5s;
+  }
+  
+  .artcaffe-market-slideshow {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .artcaffe-market-slideshow img,
+  .artcaffe-market-slideshow video {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	object-fit: cover;
+	transition: transform 1s, opacity 1s;
+  }
+  
+  .artcaffe-market-slideshow img.active,
+  .artcaffe-market-slideshow video.active {
+	opacity: 1;
+	transform: translateX(0);
+  }
+
+@media only screen and (max-width: 600px) {
+	body {
+		color: red;
+		background-color: lightblue;
+		font-size: 0.8rem !important;
+	}
+
+	.artcaffe-market-slideshow {
+		width: 100%;
+		height: 130px;
+		overflow: hidden;
+		position: relative;
+		margin: 25px 0px;
+	  }
+	  .artcaffe-slideshow {
+		width: 100%;
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		margin: 25px 0px;
+	  }
 }

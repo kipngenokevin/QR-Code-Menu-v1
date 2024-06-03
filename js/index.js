@@ -1,45 +1,32 @@
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function insertVideosAfterFoodCategory(videoSources, width = 640, height = 360) {
-      var foodCategory = document.querySelector('.food-category');
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      if (foodCategory && videoSources.length > 0) {
-        var videoContainer = document.createElement('div');
-        videoContainer.classList.add('video-container');
+		if (isSafari) {
+			var videos = document.getElementsByClassName("video");
+			for (var i = 0; i < videos.length; i++) {
+				videos[i].style.display = "none";
+			}
+		} else {
+			var imgs = document.getElementsByClassName("img");
+			for (var j = 0; j < imgs.length; j++) {
+				imgs[j].style.display = "none";
+			}
+		}
 
-        var video = document.createElement('video');
-        video.width = width;
-        video.height = height;
-        video.controls = true;
 
-        var source = document.createElement('source');
-        video.appendChild(source);
-        videoContainer.appendChild(video);
+		window.addEventListener("DOMContentLoaded", function () {
+				var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+				var slideshows = document.querySelectorAll("#artcaffe-market-slideshow");
 
-        // Insert the video container after the food-category element
-        foodCategory.parentNode.insertBefore(videoContainer, foodCategory.nextSibling);
+				slideshows.forEach(function (slideshow) {
+					var slideIndex = 0;
+					var slides = isSafari ? slideshow.querySelectorAll(".img") : slideshow.querySelectorAll(".video");
 
-        // Function to update the video source
-        let currentVideoIndex = 0;
-        function updateVideoSource() {
-          source.src = videoSources[currentVideoIndex];
-          video.load();
-          video.play();
-          currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-        }
+					function nextSlide() {
+						slides[slideIndex].classList.remove("active");
+						slideIndex = (slideIndex + 1) % slides.length;
+						slides[slideIndex].classList.add("active");
+					}
 
-        // Start the first video
-        updateVideoSource();
-
-        // Set interval to change the video every 10 seconds
-        setInterval(updateVideoSource, 10000);
-      } else {
-        console.error('No element with the class "food-category" found or no video sources provided.');
-      }
-    }
-
-    // Example usage:
-    const videos = ['', '', ''];
-    insertVideosAfterFoodCategory(videos);
-  });
-</script>
+					setInterval(nextSlide, 9000);
+				});
+		});
