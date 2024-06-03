@@ -211,6 +211,15 @@ header {
 		color: red;
 		background-color: lightblue;
 		font-size: 0.8rem !important;
+		padding: 4px;
+	}
+
+	.section-title {
+		font-size: 1.8rem;
+	}
+
+	.green-border {
+		padding: 0;
 	}
 
 	.artcaffe-market-slideshow {
